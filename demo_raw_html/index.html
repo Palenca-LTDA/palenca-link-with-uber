@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML example - Palenca Link</title>
+  <script src="https://link.palenca.com/v2/index.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div id="container" class="container"></div>
+    </div>
+  </div>
+  <script>
+    let widgetId = "YOUR_WIDGET_ID";
+    let publicApiKey = "YOUR_PUBLIC_API_KEY";
+    let renderConfig = {
+      "configuration": {
+        "hideConsent": true,
+        "country": "mx",
+        "uberRedirectUrl": "https://palenca.com"
+      },
+      appearance: {
+        primaryColor: "#ea4c89",
+        borderRadius: "999px"
+      }
+    }
+
+    let link = palenca.loadLink(publicApiKey, widgetId).then(link => {
+
+      link.on("ready", () => {
+        console.log("Widget is ready")
+      })
+
+      link.on("user_created", (event) => {
+        console.log("User created", event)
+      })
+
+      link.on("connection_success", (event) => {
+        console.log(`Connection success for userId ${event.data.user_id} and accountId ${event.data.account_id}`)
+      })
+
+      link.on("connection_error", (event) => {
+        console.log(`Connection error ${event.data.error.code}`)
+      })
+
+      link.on("open_link", (event) => {
+        console.log(`Open link ${event.data}`)
+        console.log({ "url": event.data })
+        window.open(event.data, "_blank")
+      })
+
+      link.render("container", renderConfig);
+
+    }, error => {
+      console.log(error);
+    })
+
+  </script>
+</body>
+
+</html>
