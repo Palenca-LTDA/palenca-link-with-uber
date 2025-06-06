@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Alert, TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { useRoute } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
-import { palencaSdkContent } from '../palencaSdk.js';
 
 const MainScreen = () => {
   const webViewRef = useRef<WebView>(null);
@@ -315,7 +314,7 @@ const MainScreen = () => {
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <title>Palenca Link</title>
-      <script>${palencaSdkContent}</script>
+      <script src="https://link.palenca.com/v2/index.min.js"></script>
       <style>
         body {
           margin: 0;

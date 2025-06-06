@@ -1,0 +1,35 @@
+:root {
+    --primary-text-color: #323338;
+    --primary-background-color: #fafafa;
+    --secondary-background-color: #ffffff;
+    --primary-border-radius: .375rem;
+    --shadow-md: 0 5px 10px rgba(102,102,102,0.16);
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--primary-background-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrapper {
+    display: flex;
+    height: 100%;
+
+  }
+  .card {
+    margin: auto;
+    background-color: var(--secondary-background-color);
+    border-radius: var(--primary-border-radius);
+    box-shadow: var(--shadow-md);
+  }
+  .container {
+    display: flow-root;
+    width: 24rem;
+    height: 48rem;
+
+  }

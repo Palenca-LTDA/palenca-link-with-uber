@@ -1,6 +1,6 @@
 # Palenca Redirect Server
 
-A simple Node.js server that handles redirects from web URLs to mobile app deeplinks. This server is designed to bridge the gap between web-based OAuth flows and mobile app deeplinks.
+A simple Node.js server that handles redirects from web URLs to mobile app deeplinks. This server is designed to bridge the gap between web-based Uber login flows and mobile app deeplinks.
 
 ## Overview
 
@@ -105,7 +105,7 @@ palencalink://app?widget_id=123&account_id=456&user_id=789&status=success&status
 
 ## How It Works
 
-1. **User completes OAuth flow** → Backend redirects to your ngrok URL
+1. **User completes Uber login flow** → Backend redirects to your ngrok URL
 2. **Browser loads the landing page** → Shows loading spinner and redirect message
 3. **JavaScript attempts deeplink redirect** → `window.location.href = 'palencalink://app?...'`
 4. **Mobile app receives deeplink** → App displays the query parameters
