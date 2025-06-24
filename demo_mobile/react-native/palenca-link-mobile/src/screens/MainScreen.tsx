@@ -104,7 +104,8 @@ const MainScreen = () => {
       "configuration": {
         "hideConsent": true,
         "country": "mx",
-        "uberRedirectUrl": "https://localpalenca.tunn.dev/redirect-to-app"
+        "uberRedirectUrl": "https://localpalenca.tunn.dev/redirect-to-app",
+        "externalId": "your_external_id"
       },
       appearance: {
         primaryColor: "#ea4c89",
